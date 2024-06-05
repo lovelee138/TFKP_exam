@@ -1,0 +1,72 @@
+\newpage 
+\section{Непрерывность и дифференцируемость функций коплексного переменного, их связь. Теорема Коши-Римана. Голоморфные функции.}
+\ \\
+ФКП $f: \, G\subset \overline{\mathbb{C}} \rightarrow \overline{\mathbb{C}}$ \textbf{непрерывна} в точке $z_0$, если:
+$$\lim\limits_{z\to z_0}f(z)=f(z_0)$$
+ФКП $f(z) \,\mathbf{\mathbb{C}}$\textbf{--дифференцируема в точке $z_0$} $\Leftrightarrow$ 
+\begin{enumerate}
+    \item $f$ определена в окрестности точки $z_0$;
+    \item $f(z_0 + \Delta z) - f(z_0) = A\Delta z + \alpha(\Delta z)\Delta z$,
+\end{enumerate}
+где $A \in \mathbb{C}$, $\alpha(\Delta z) \rightarrow 0$ при $\Delta z \rightarrow 0$\\[2mm]
+Предел $\lim_{\Delta z \rightarrow 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}$ называют \textbf{производной ФКП $f(z)$ в точке $z_0$} и обозначают $f'(z_0)$.\\[2mm]
+\textbf{Теорема (1-ый критерий $\mathbf{\mathbb{C}}$--дифференцируемости):}
+\begin{center}
+    ФКП $f(z)$ дифференцируема в точке $z_0$\\
+    $\Leftrightarrow$\\
+    $\exists$ производная $f'(z_0)$ функции $f$ в точке $z_0$, при этом $f'(z_0) = A$.
+\end{center}
+\begin{proof}
+\ \\
+''$\Rightarrow$''\\
+$f'(z_0) = \lim_{\Delta z \rightarrow 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} = \lim_{\Delta z \rightarrow 0} \frac{A\Delta z + \alpha(\Delta z)\Delta z}{\Delta z} = \\
+= \lim_{\Delta z \rightarrow 0} (A + \alpha(\Delta z)) = A$ $(\alpha(\Delta z) \rightarrow 0$ при $\Delta z \rightarrow 0) \Rightarrow$\\
+$\Rightarrow \exists f'(z_0) = A$.\\
+''$\Leftarrow$''\\
+$f'(z_0) = \lim_{\Delta z \rightarrow 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}$,\\
+$\alpha(\Delta z) = \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} - f'(z_0) \rightarrow 0$ при $\Delta z \to 0 \Rightarrow$\\
+$\Rightarrow f(z_0 + \Delta z) - f(z_0) = A\Delta z + \alpha(\Delta z)\Delta z$.
+\end{proof}
+Функция $w = f(z)$ называется \textbf{голоморфной (аналитической)} в точке $z_0 \in \mathbb{C} \Leftrightarrow f$ -- $\mathbb{C}$ -- дифференцируема в окрестности точки $z_0$.\\[2mm]
+\textbf{Теорема (об условиях Коши-Римана):}\\[2mm]
+Функция $f(z) = u(x, y) + iv(x, y)$, где $z = x + iy$, $\mathbb{C}$ -- дифференцируема в точке $z_0 = x_0 + iy_0$ тогда и только тогда, когда:
+\begin{enumerate}
+    \item Функции $u(x, y)$ и $v(x, y)$ $\mathbb{R}^2$ -- дифференцируемы в точке $M_0(x_0, y_0)$;
+    \item Выполняются условия (уравнения) Коши-Римана:\\
+    $\begin{cases}
+        \dfrac{\partial u}{\partial x} (M_0) = \frac{\partial v}{\partial y} (M_0)\\
+        \dfrac{\partial u}{\partial y} (M_0) = -\frac{\partial v}{\partial x} (M_0)
+    \end{cases}$
+\end{enumerate}
+При этом $f'(z_0) = \frac{\partial u}{\partial x} (M_0) + i\frac{\partial v}{\partial x} (M_0) = \frac{\partial v}{\partial y} (M_0) - i\frac{\partial u}{\partial y} (M_0)$.
+\begin{proof}
+\ \\
+''$\Rightarrow$''\\
+$\Delta f(z_0, \Delta z) = A\Delta z + \gamma(\Delta z)\Delta z$, но при этом:\\
+$\Delta f(z_0, \Delta z) = \Delta u(x_0, y_0, \Delta x, \Delta y) + i\Delta v(x_0, y_0, \Delta x, \Delta y) =$\\[2mm]
+$ = \alpha\Delta x - \beta\Delta y + i(\alpha\Delta y + \beta\Delta x) + \gamma(\Delta z)\Delta z \Rightarrow$\\[2mm]
+$\Rightarrow
+\begin{cases}
+    \Delta u = \alpha\Delta x - \beta\Delta y + Re(\gamma(\Delta z)\Delta z)\\
+    \Delta v = \alpha\Delta y + \beta\Delta x + Im(\gamma(\Delta z)\Delta z),
+\end{cases}$\\
+где $\frac{\gamma(\Delta z)\Delta z}{|\Delta z|} \rightarrow 0$ при $\Delta z \rightarrow 0 \ ((\Delta x, \Delta y) \rightarrow 0)$, так как $\gamma(\Delta z) \rightarrow 0$, а $\frac{\Delta z}{|\Delta z|}$ -- ограничена при $\Delta z \rightarrow 0 \Rightarrow$\\
+$\begin{cases}
+    Re(\gamma(\Delta z)\Delta z) = o(|\Delta z|)\\
+    Im(\gamma(\Delta z)\Delta z) = o(|\Delta z|)
+\end{cases}$
+$\Rightarrow$ 1);\\
+$\begin{cases}
+    \Delta u = u'_x\Delta x + u'_y\Delta y + o(|\Delta z|)\\
+    \Delta v = v'_x\Delta x + v'_y\Delta y + o(|\Delta z|)
+\end{cases} \Rightarrow$\\
+$\Rightarrow
+\begin{cases}
+    u'_x = \alpha = v'_y\\
+    u'_y = -\beta = -v'_x
+\end{cases} \Rightarrow 2)$\\
+Тогда $f'_z = \alpha + i\beta \Rightarrow$
+$\Rightarrow f'(z_0) = \frac{\partial u}{\partial x} (M_0) + i\frac{\partial v}{\partial x} (M_0) = \frac{\partial v}{\partial y} (M_0) - i\frac{\partial u}{\partial y} (M_0)$\\[2mm]
+``$\Leftarrow:$''
+Аналогично
+\end{proof}

@@ -1,0 +1,82 @@
+\newpage
+\section{Дробно-линейные функции, их геометрическая интерпретация и свойство трёх точек.}
+
+\textbf{Дробно-линейные отображения} --- это функции вида: $$w=\frac{az+b}{cz+d}, \text{где } \ \begin{vmatrix}
+    a&b\\
+    c&d
+\end{vmatrix} \neq 0, \ a,b,c,d\in \mathbb{C}$$
+
+Доопределим функцию выше следующим образом:$$z=-\frac{d}{c}: \ w(-\frac{d}{c}) = \infty$$
+$$z = \infty: \ w(\infty) = \left[\begin{gathered}\frac{a}{c}, \ c\neq 0\\
+\infty, \ c=0
+\end{gathered}
+\right.$$
+Тогда ДЛО: $w: \overline{\mathbb{C}}\to \overline{\mathbb{C}}$
+
+
+\textbf{Геометрическая интерпретация:}
+ДЛО --- взаимно-однозначное непрерывное отображение $\overline{\mathbb{C}}\to \overline{\mathbb{C}}$
+
+\textbf{Теорема о трех точках} \\
+Для любых трех различных точек $z_1, z_2, z_3$ и других трех различных точек $w_1, w_2, w_3$ 
+существует единственное ДЛО $L(z): L(z_i) = w_i$
+
+\textbf{Доказательство} \\
+1) \textit{Существование} \\
+Для любых 3-х точек $z_1, z_2, z_3$
+существует ДЛО, отображающее их в $0, \infty, 1$ соответственно:
+$$
+w = \frac{z - z_1}{z - z_2}\cdot\frac{z_3 - z_2}{z_3 - z_1}
+$$
+Тогда рассмотрим отображения $L_1: \xi = \frac{z - z_1}{z - z_2}\cdot\frac{z_3 - z_2}{z_3 - z_1}$
+и $L_2: \xi = \frac{w - w_1}{w - w_2}\cdot\frac{w_3 - w_2}{w_3 - w_1}
+$. Из группового свойства ДЛО следует, что $L_2^{-1}$ -- тоже ДЛО, и композиция ДЛО -- тоже ДЛО.
+Тогда получаем, что отображение $L = L_2^{-1} \circ L_1$ есть ДЛО, причем
+\begin{equation}
+\begin{gathered}
+    \begin{pmatrix}
+        z_1 \\
+        z_2 \\
+        z_3
+    \end{pmatrix}
+    \overset{L_1}{\rightarrow}
+    \begin{pmatrix}
+        0 \\
+        \infty \\
+        1
+    \end{pmatrix}
+    \overset{L_2^{-1}}{\rightarrow}
+    \begin{pmatrix}
+        w_1 \\
+        w_2 \\
+        w_3
+    \end{pmatrix},
+\end{gathered}
+\end{equation}
+то есть $L$ есть искомое ДЛО. \\
+2) \textit{Единственность}
+Пусть $\lambda$ -- ДЛО, отличное от $L$, построенного в пункте 1, удовлетворяющее условиям теоремы. \\
+Рассмотрим отображение $\mu = L_2 \circ \lambda \circ L_1^{-1}$. Из группового свойства ДЛО полученное отображание -- ДЛО, причем
+\begin{equation}
+\begin{gathered}
+    \mu: 
+    \begin{pmatrix}
+        0 \\
+        \infty \\
+        1
+    \end{pmatrix}
+    \rightarrow 
+    \begin{pmatrix}
+        0 \\
+        \infty \\
+        1
+    \end{pmatrix}
+\end{gathered}
+\end{equation}
+Теперь покажем, что $\mu = id$: \\
+$\mu = \frac{az + b}{cz + d}$ \\ \\
+a) $\mu(\infty) = \frac{a}{c} = \infty \Rightarrow c = 0$ \\ \\
+b) $\mu(0) = \frac{b}{d} = 0 \Rightarrow b = 0$ \\ \\
+c) $\mu(1) = \frac{a}{d} = 1 \Rightarrow a = d$ \\ \\
+В итоге получаем, что $\mu(z) = z \Rightarrow \mu = id$,
+то есть $L_2 \circ \lambda \circ L_1^{-1} = id \Rightarrow \lambda = L_2^{-1} \circ L_1 = L$, что и требовалось доказать.

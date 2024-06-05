@@ -1,0 +1,76 @@
+\newpage
+\section{Определить дробно-линейное отображение (ДЛО). Сформулировать и доказать конформность и групповое свойство ДЛО.}
+
+
+\textbf{Дробно-линейные отображения} --- это функции вида: $$w=\frac{az+b}{cz+d}, \text{где } \ \begin{vmatrix}
+    a&b\\
+    c&d
+\end{vmatrix} \neq 0, \ a,b,c,d\in \mathbb{C}$$
+
+Доопределим функцию выше следующим образом:$$z=-\frac{d}{c}: \ w(-\frac{d}{c}) = \infty$$
+$$z = \infty: \ w(\infty) = \left[\begin{gathered}\frac{a}{c}, \ c\neq 0\\
+\infty, \ c=0
+\end{gathered}
+\right.$$
+Тогда ДЛО: $w: \overline{\mathbb{C}}\to \overline{\mathbb{C}}$
+
+
+\textbf{Конформность:}
+
+Любое ДЛО --- конформное отображение $\overline{\mathbb{C}}\to \overline{\mathbb{C}}$
+
+\begin{proof}
+    \ \\
+    1) Рассмотрим точки $z_0 \neq -\frac{d}{c}, \ \infty:$
+    
+    Тогда $w'=\frac{a(cz+d)-(az+b)c}{(cz+d)^2} = \frac{ad-bc}{(cz+d)^2} \neq 0$
+
+    Значит функция $w$ голоморфна в точках $z_0$ и по теореме о конформности голоморфных отображений, она конформна в этих точках $z_0$.
+
+    2) Рассмотрим точку $z_0=-\frac{d}{c}:$ $$z\overset{L}{\longrightarrow}w=\frac{az+b}{cz+d}\overset{L_0}{\longrightarrow} \xi=\frac{1}{w}$$ $$\mathbf{-\frac{d}{c}} \ \overset{L}{\longrightarrow} \ \mathbf{\infty} \ \overset{L_0}{\longrightarrow} \ \mathbf{0}$$
+    Отображение $\xi=\frac{1}{w}$ сохраняет углы, то есть $L_0$ конформно.
+    Рассмотрим $L_0\circ L$ в точке $z_0=-\frac{d}{c}:$
+    $$(L_0\circ L)^{'}_{|z=-\frac{c}{d}} = \frac{cb-ad}{(az+b)^2}_{|_{z=-\frac{c}{d}}} \neq 0$$
+    Значит отображение $L_0\circ L$ конформно в точке $z_0=-\frac{c}{d}$\\
+    $L=L_0^{-1}\circ (L_0\circ L)$ конформно, так как композиция конформных и обратное к конформному отображению конформны.
+
+    3) Рассмотрим точку $z_0=\infty$:
+    $$\xi=\frac{1}{z} \ \overset{L_0}{\longleftarrow} \ z \ \overset{L}{\longrightarrow} \ w=\frac{az+b}{cz+d}$$
+    $$\mathbf{0} \ \overset{L_0}{\longleftarrow} \ \mathbf{\infty} \ \overset{L}{\longrightarrow} \ \mathbf{\frac{a}{c}}$$
+    Рассмотрим отображение $L\circ L_0^{-1}$:
+    $$w=\frac{a\cdot \frac{1}{\xi}+b}{c\cdot \frac{1}{\xi}+d} = \frac{b\cdot \xi+a}{d\cdot \xi +c}$$
+    $$w^{'}_{|_{0}} = \frac{dc-da}{(d\cdot\xi+c)^2}_{|_{\xi=0}}\neq 0$$
+    Значит отображение $L\circ L_{0}^{-1}$ конформно в точке $\xi_0 = 0$.\\
+    Тогда отображение $L=(L\circ L_{0}^{-1})\circ L_0$ конформно в точке $z_0=\infty$, так как композиция конформных и обратное к конформному отображению конформны. 
+\end{proof}
+
+\textbf{Групповое свойство ДЛО:}
+
+Совокупность всех ДЛО $\Lambda$ образует некоммутативную группу $(\Lambda; \circ)$ относительно операции композиции.
+
+\begin{proof}
+    \ \\
+    0) Замкнутость:\\
+    $w=\frac{az+b}{cz+d}; \ \xi=\frac{a_1w+b_1}{c_1w+d_1}$\\[2mm]
+    $\xi=\frac{a_1\cdot\frac{az+b}{cz+b}+b_1}{c_1\cdot\frac{az+b}{cz+b}+d_1} =\frac{a_1(az+b)+b_1(cz+d)}{c_1(az+b)+d_1(cz+d)}=$\\
+    $= \frac{(a_a+b_1c)z+a_1b+b_1d}{(c_1a+d_1c)z+c_1b+d_1d}$\\[2mm]
+    Определитель $\begin{vmatrix}
+        a_1a+b_1c & a_1b+b_1d\\
+        c_1a+d_1c & c_1b+d_1d
+    \end{vmatrix}$ не равен 0, так как иначе композиция ДЛО была бы отображением в одну точку, но композиция биекций есть биекция.\\[2mm]
+    1) Ассоциативность выполняется, так как композиция отображений ассоциативна\\[2mm]
+    2) Существование единицы:\\
+    $E: \ w=z, \ \begin{pmatrix} a=1&b=0\\c=0&d=1\end{pmatrix}, \ det = 1\neq0$\\[2mm]
+    3) Существование обратного:\\
+    Пусть $L: \ w=\frac{az+b}{cz+d}$ --- ДЛО.\\
+    Построим обратное:
+    $$w(cz+d)=az+b$$
+    $$z(wc-a)=b-dw$$
+    $$L^{-1}: \ z=\frac{b-dw}{wc-a} \text{ --- ДЛО, так как } \ \begin{vmatrix}-d&b\\c&-a\end{vmatrix}=ad-bc\neq0$$ 
+    4) Некоммутативность:\\
+    Приведем контрпример
+    $$L_1: \ w=z+a, \ L_2: \ w=\frac{1}{z}$$
+    $$L_1\circ L_2: \ z \overset{L_2}{\rightarrow} w=\frac{1}{z} \overset{L_1}{\rightarrow} w = \frac{1}{z}+a$$
+    $$L_2 \circ L_1: \ z \overset{L_1}{\rightarrow} w = z+a \overset{L_2}{\rightarrow} w = \frac{1}{z+a}$$
+    Получили, что $L_1\circ L_2 \neq L_2 \circ L_1$
+\end{proof}
