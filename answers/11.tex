@@ -1,0 +1,52 @@
+\section{Теорема о разложении голоморфной функции в ряд Тейлора. Неравенства Коши для коэффициентов ряда Тейлора. Теорема Лиувилля.}
+
+\textbf{Теорема о разложение голоморфной функции в ряд Тейлора:}\\[2mm]
+Пусть $D$ -- область в $\mathbb{C} \ f \in H(D), \ z_0 \in D, U_R(z_0) = \{z \in \mathbb{C}: |z-z_0| < R\} \subset D$. \\[2mm]
+Тогда $f(z) = \sum_{n=0}^{\infty}c_n \cdot (z-z_0)^n, \ z \in U_R(z_0), \ c_n = \frac{1}{2\pi i} \int \limits_{{\gamma}_r} \frac{f(\xi)}{(\xi-z)^{n+1}} d\xi, \ \gamma_r = \{z \in \mathbb{C}: |z-z_0| = r\}$
+
+
+\begin{proof}
+	\ \\
+	По интегральной формуле Коши: \\[2mm]
+	$f(z) = \frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \frac{f(\xi)}{\xi - z} d\xi$ если $|z-z_0| < r$\\[2mm]
+	$\frac{1}{\xi - z} = \frac{1}{\xi - z_0 - (z - z_0)} = \frac{1}{\xi - z_0} \cdot \frac{1}{1 - \frac{z-z_0}{\xi - z_0}} \ (=)$\\[2mm]
+	$\frac{|z-z_0|}{|\xi - z_0|} = \frac{|z - z_0|}{r} < 1$\\[2mm]
+	$(=) \ \frac{1}{z-z_0} \cdot \sum_{n=0}^{\infty} \left( \frac {z-z_0}{\xi - z_0}\right)^n, \ \frac{1}{2 \pi i}f(z)$ -- непрерывна. \\[2mm]
+	Тогда $ \ \frac{1}{2 \pi i}f(z) \cdot \frac{1}{\xi - z} = \frac{1}{2 \pi i} \sum \frac{f(\xi)(z-z_0)^n}{0}$ -- сходится равномерно, значит можно интегрировать почленно. \\[2mm]
+	Тогда получаем утверждение теоремы:
+	$$
+	f(z) = \frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \sum_{n=0}^{\infty}\frac{f(\xi) (z - z_0)^n}{(\xi - z_0)^{n+1}}d\xi = \frac{1}{2 \pi i}\sum_{n=0}^{\infty}(z-z_0)^n \int \limits_{{\gamma}_r} \frac{f(\xi)}{(z-z_0)^{n+1}}
+	$$
+\end{proof}
+
+
+\textbf{Неравенство Коши для коэффициентов ряда Тейлора:}\\[2mm]
+Пусть функция $f \in H(\overline{U})$, где $U = \{ z: |z-z_0|d \leq r\}$ и $\partial\overline{U} = {\gamma}_r, \ |f(z) \leq M$. \\[2mm]
+Тогда коэффициенты ряда Тейлора $f$ удовлетворяют следующему неравеству: $|c_n| \leq \frac{M}{r^n}$ 
+
+
+\begin{proof}
+	\ \\
+	\begin{equation*}
+		|c_n| = |\frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \frac{f(\xi)}{(\xi - z_0)^{n+1}}d\xi| \leq \frac{1}{2 \pi} \cdot \frac{M}{r^{n+1}} \cdot 2 \pi r = \frac{M}{r^n},
+	\end{equation*}
+	так как $|f(\xi)| \leq M$ и $(\xi - z)^{n+1} \leq r^{n+1}$
+\end{proof}
+
+
+\textbf{Теорема Лиувилля:}\\[2mm]
+$f \in H(\mathbb{C})$ и $f$ -- ограниченная функция $\Rightarrow \ f = const$ 
+
+
+\begin{proof}
+	По теореме о разложении голоморфной функции в ряд Тейлора 
+	функция $f$ представима в виде $f = \sum_{n=0}^{\infty} c_n (z - z_0)^n$ внутри окружности любого радиуса $R$,
+	причем по этой же теореме коэффициенты ряда не зависят от $R$.\\[2mm]
+	Тогда из неравенства Коши для коэффициентов ряда Тейлора:
+	$$
+	|c_n| \leq \frac{M}{R^n}
+	$$
+	Из того что $R$ произвольный следует, что $c_n = 0$ для
+	любого $n$, а значит $f = const$
+\end{proof}
+
