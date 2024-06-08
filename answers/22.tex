@@ -5,7 +5,70 @@
 Пусть $f(t)$ --- функция, $t \in \mathbb{R}$\\
 \textbf{Преобразование Лапласа} функции $f$ --- это $$F(p)=\int\limits_{0}^{+\infty}f(t)e^{-pt}dt, \in \mathbb{C}$$
 Обозначение: $F(p)\risingdotseq f(t), f(t)\fallingdotseq F(p)$\\[2mm]
+Функцию $f(t)$ называют \textbf{оригиналом}
+$$\Rightarrow$$
+\begin{enumerate}
+    \item $f(t)$ --- кусочно-непрерывная при $t\geq 0$
+    \item $f()t)=0$ при $t<0$
+    \item $\exists M > 0: \ \exists \alpha \in \mathbb{R}: \ |f(t)|\leq M e^{\alpha t}$
+\end{enumerate}
+
 
 \textbf{Теорема о существования изображения:}\\[2mm]
+Пусть $f(t)$ --- оригинал\\
+Тогда: 1) интеграл $F(p)=\int\limits_{0}^{+\infty} f(t)e^{-pt}dt$ сходится абсолютно в области $\{p\in\mathbb{C}: Re\,p>\alpha\}$\\
+2) изображение $F(p)$ --- аналитическая функция в $U_{\alpha}$.
 
+\begin{proof}
+    \ \\
+    $|f(t)|\leq M e^{\alpha t}$ --- условие 3) из определения оригинала\\
+    Пусть $p=\delta +i s$, тогда:
+    $$|f(t)e^{-pt}|=|f(t)|\cdot|e^{-\delta t}|\cdot |e^{-ist}|\leq M e^{\alpha t}e^{-\delta t}=Me^{(\alpha-\delta)t}$$
+    $|F(p)|=\lim\limits_{b\to + \infty} \left| \int\limits_{0}^{b}f(t)e^{-pt}dt \right| \leq \text{по теореме об оценке}$\\
+    $\leq \lim\limits_{b\to +\infty}\int_{0}^{b}|f(t)e^{-pt}|dt \leq \lim\limits_0^bMe^{(\alpha-\delta)t}dt = \lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}e^{(\alpha -\delta)t}|_0^b=$\\
+    $=\lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}(e^{(\alpha-\delta)b}-1)=-\frac{M}{\alpha-\delta}=\frac{M}{\delta-\alpha}$, значит по признаку Вейерштрасса сходится равномерно.\\
+    Значит $Re\,(p=\delta+i s)=\delta \Rightarrow Re \, pj>\alpha \Rightarrow F'(p)=\int\limits_0^{+\infty} (-t)f(t)e^{-pt}dt \Rightarrow F(p)$ --- аналитическая функция.  
+\end{proof}
 
+\textbf{Поведение изображения в бесконечности:}\\[2mm]
+Если изображение $F(p)$ аналитическая функция в $\infty$, то $F(\infty)=0$.\\
+
+\begin{proof}
+    \ \\
+    Из доказательства теоремы 1:
+    $$|F(p)|\leq \frac{M}{\delta - \alpha},$$ где $\alpha=const, \, \delta=Re\,p$.\\
+    Если $Re\,p\to\infty,$ то $\frac{M}{\delta-\alpha}\to 0 \Rightarrow |F(p)|\to 0,$ т.к. $F(p)\to F(\infty)$.
+\end{proof}
+
+\textbf{Изображение элементарных функций:}
+\begin{enumerate}
+    \item Функция Хевисайда $\nu$\\
+    $\nu(t)=
+    \begin{cases}
+        1\text{, при }t\geq 0\\
+        0\text{, при }t\geq 0
+    \end{cases}$\\
+    $\int\limits_{0}^{\infty}1e^{-pt}dt=-\frac{e^{-pt}}{p}|_0^{+\infty}$\\
+    При $p=\delta +i s: \ |e^{-pt}|=|e^{-\delta t}\cdot e^{-i s t}|$\\
+    Тогда $1\risingdotseq \frac{1}{p}$
+
+    \item Показательная функция\\
+    $e^{\alpha t}\risingdotseq \frac{1}{p-\alpha}$\\
+    По теореме затухания $\forall \alpha \in \mathbb{C}: e^{\alpha t} f(t) \risingdotseq F(p-\alpha)$\\
+    Так как $1\risingdotseq \frac{1}{p}$, то имеем:\\
+    $e^{\alpha t}\cdot 1 \risingdotseq \frac{1}{p-a}$
+
+    \item Степенная функция\\
+    $t^n \risingdotseq \frac{n!}{p^n}$\\
+    Докажеми по индукции:\\
+    По теореме об интегрировании оригинал $\int\limits_{0}^{t} f(\tau)d\tau \risingdotseq \frac{F(p)}{p}$\\
+    При $n=0:$ выполняется. Пусть выполнено для $n=k$, тогда:\\
+    $f(\tau)=\tau^k \risingdotseq \frac{k!}{p^k}$\\
+    $t^{k+1}=(k+1)\cdot\int\limits_{0}^{t}\tau^k d\tau = (k+1)\cdot \frac{k!}{p^k \cdot p} = \frac{(k+1)!}{p^{k+1}}$\\[2mm]
+\end{enumerate}
+
+\textbf{Теорема обращения:}\\
+Если $f(t)$ --- оригинал с постоянной $\alpha$;\\
+\hspace*{1 cm} $F(p)\fallingdotseq f(t)$; $t$ -- точка, в которой $f(t)$ -- непрерывная.\\
+То $f(t)=\frac{1}{2\pi i}\int\limits_{\gamma-i\infty}^{\gamma+i\infty} F(p)e^{pt}dp$ --- интеграл по прямой\\
+\hspace*{1cm} $Re\, p=\gamma, \ \gamma > \alpha$\\
