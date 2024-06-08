@@ -1,3 +1,44 @@
 \newpage
 \section{Три теоремы разложения. Доказать теоремы подобия и запаздывания.}
 
+\textbf{Три теоремы разложения:}
+\begin{enumerate}
+    \item Если $F(p) = \sum_{n=0}^\infty\frac{a_n}{p^{n+1}}$ сходится при $|p|>R$, то:
+    $$f(t)=\sum_{n=0}^\infty\frac{a_n}{n!}t^n$$
+    \item Второй метод построения оригинала по изображению:\\
+    Каждая рациональная функция $F(p)$, у которой степень числителя меньше степени знаменателя, является изображением:
+    $$F(p)=\frac{R(p)}{Q(p)}, deg\,Q>deg],R$$
+    \item Пусть $f(t)\risingdotseq F(p); F(p)$ -- аналитическая функция при $Re\,p>\sigma_0$, а при $Re\,\leq \sigma_0$ имеет конечное число изолированных особых точек $p_1, ..., p_n$. Тогда:
+    $$f(t)=\sum_{k=1}{n}res(e^{pt}\cdot F(p))(p_k)$$
+\end{enumerate}
+
+\textbf{Теорема подобия:}\\
+$\forall \lambda > 0: f(\lambda t) \risingdotseq \frac{1}{\lambda} F\left(\frac{b}{\lambda}\right)$
+
+\begin{proof}
+    \ \\
+    $f(\lambda t)\risingdotseq \int\limits_{0}^{+\infty}f(\lambda t)e^{-pt}dt =
+    \begin{vmatrix}
+        \tau=\lambda t\\
+        t=\frac{\tau}{\lambda}\\
+        dt=\frac{1}{\lambda}d\tau\\
+    \end{vmatrix}
+    = \int\limits_0^{+\infty} f(\tau)e^{-\frac{p}{\lambda}\tau}\frac{1}{\lambda}d\tau = \frac{1}{\lambda}\int\limits_0^{+\infty}f(\tau)e^{-\frac{p}{\lambda}\tau}d\tau=\frac{1}{\lambda} F\left(\frac{b}{\lambda}\right)$
+\end{proof}
+
+\textbf{Теорема запаздывания:}\\
+$\forall \tau > 0: f(t-\tau) \risingdotseq e^{-p\tau}\cdot F(p)$
+    
+\begin{proof}
+    \ \\
+    $f(t-\tau)\risingdotseq \int\limits_0^{+\infty} f(t-\tau)e^{-p\tau}dt = 
+    \begin{vmatrix}
+        t_1=t-\tau\\
+        dt_1=dt\\
+        t=t_1+\tau
+    \end{vmatrix}
+    = \int\limits_{-\tau}^{+\infty}f(t_1)\cdot e^{-pt_1-p\tau}dt_1=\int\limits_0^{+\infty}f(t_1)\cdot e^{-pt_1-p\tau}dt_1+\int\limits_{-\tau}^0 f(t_1)\cdot e^{-p1_1-p\tau}dt_1$\\
+    Из определения оригинала: $f(t_1)=0$ при $t_1<0$. Тогда:\\
+    $f(t-\tau)\risingdotseq e^{-p\tau}\int\limits_0^{+\infty} f(t_1)e^{pt_1}dt_1 = e^{-p\tau}\cdot F(p)$
+\end{proof}
+    

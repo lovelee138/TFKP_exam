@@ -1,3 +1,42 @@
 \newpage
 \section{Основные свойства преобразования Лапласа. Теоремы линейности, подобия, затухания, запаздывания, опережения, дифференцирования и интегрирования оригинала, дифференцирования и интегрирования изображения. Свертка двух функций. Теорема умножения изображений. Доказать теоремы затухания и дифференцирования оригинала, сформулировать остальные теоремы.}
 
+\textbf{Свойства преобразования Лапласа:}
+
+\begin{enumerate}
+    \item \textbf{Теорема линейности:}\\
+    $\forall A, B \in \mathbb{R}: Af(t)+Bg(t)\risingdotseq A\cdot F(p)+B\cdot G(p)$
+    \item \textbf{Теорема подобия:}\\
+    $\forall \lambda > 0: f(\lambda t) \risingdotseq \frac{1}{\lambda} F\left(\frac{b}{\lambda}\right)$
+    \item \textbf{Теорема затухания (смещения):}\\
+    $\forall a \in \mathbb{C}: e^{at}f(t)\risingdotseq F(p-a)$\\
+    \begin{proof}
+        \ \\
+        $e^{at}f(t)\risingdotseq \int\limits_0^{+\infty} e^{at}f(t)e^{-pt}dt=\int\limits_0^{+\infty}f(t)e^{-(p-a)t}dt=F(p-a)$
+    \end{proof}
+    \item \textbf{Теорема запаздывания:}\\
+    $\forall \tau > 0: f(t-\tau) \risingdotseq e^{-p\tau}\cdot F(p)$
+    \item \textbf{Теорема опережения:}\\
+    $\forall \tau > 0: f(t+\tau) \risingdotseq e^{p\tau}[F(p)-\int\limits_0^{\tau}f(t)e^{pt}dt]$
+    \item \textbf{Теоерема дифференцирования интеграла:}\\
+    $f'(t)\risingdotseq p\cdot F(p) -f(0)$
+    \begin{proof}
+        \ \\
+        $f'(t)\risingdotseq \int\limits_0^{+\infty}f'(t)e^{-pt}dt = f(t)\cdot e^{-pt}|_0^{+\infty} -\int\limits_0^{+\infty} f(t) de^{-pt} = 0 -f(0)e^{-p\cdot 0}+p\int\limits_0^{+\infty}f(t)e^{-pt}dt$\\
+        $|f(t)e^{-pt}|\leq M\cdot e^{(\alpha-Re\,p)t}\to0$ при $r\to +\infty, \alpha -Re\,p <0$\\
+        $f'(t)\risingdotseq -f(0)+p\cdot F(p)$
+    \end{proof}
+    \item \textbf{Теорема об интегрировании оригинала:}\\
+    $\int\limits_0^tf(\tau)d\tau\risingdotseq\frac{F(p)}{p}$
+    \item \textbf{Теорема о дифференцировании изображения:}\\
+    $-t\cdot f(t)\risingdotseq F'(p)$
+    \item \textbf{Теорема об интегрировании изображения:}\\
+    $\frac{f(t)}{t}\risingdotseq \int\limits_p^{\infty}F(z)dz$\\[2mm]
+\end{enumerate}
+
+\textbf{Сверткой} функций $f, g$ называется:
+$$f \star g = \int\limits_0^t f(\tau)g(t-\tau)d\tau$$
+
+\textbf{Теорема умножения изображений:}\\
+$(f\star g)(t)\risingdotseq F(p)\cdot G(p)$
+
