@@ -1,0 +1,102 @@
+\newpage
+\section{Характеризация в терминах рядов Лорана изолированной особой точки $\infty$. Вычет в бесконечности.}
+
+
+\textbf{Точка }$\mathbf{\infty}$ --- \textbf{изолированная особая точка} функции $f$, если:
+$$\exists R > 0: \ f\in H(\overset{\circ}{U_{R}}(\infty))$$
+
+Разложение в ряд Лорана в окрестности $\infty$:
+$$f(z)=\sum_{n=-\infty}^{+\infty} c_n z^n\text{, обл. сход. содержит } U_R(\infty)$$
+
+Главная часть: $\sum_{n=1}^{+\infty} c_n z^n$
+
+Правильная часть: $\sum_{n=0}^{-\infty} c_n z^n$
+
+Классификация особой точки $\infty$ (характеризация):
+\begin{enumerate}
+    \item \textbf{Устранимая}, если существует конечный  предел функции в этой точке.
+    \item \textbf{Полюс}, если предел функции равен бесконечности в этой точке.
+    \item \textbf{Существенно особая}, если не существует предела функции в этой точке.
+\end{enumerate}
+
+\textbf{Характеризация устранимой особой точки:}\\
+Если точка $a\in \mathbb{C}$ --- изолированная особая точка функции $f$, то следующие условия эквивалентны:
+\begin{enumerate}
+    \item $a$ --- устранимая особая точка
+    \item Лорановское разложение функции $f$ в окрестности точки $a$ не содержит главной части. 
+    \item Функция $f$ ограничена в окрестности точки $a$.
+\end{enumerate}
+
+\begin{proof}
+    \ \\
+    "$2)\to 1)$":\\
+    Разложение в ряд Лорана в $\overset{\circ}{U_{\delta}}(a):$\\
+    $f(z)=\sum_{n=0}^\infty c_n(z-a)^n \to c_0$ при $z\to a \Rightarrow 1)$\\[2mm]
+    "$1) \to 3)$":\\
+    $\lim\limits{z\to a}f(z)=A\in\mathbb{C} \Rightarrow f$ -- ограниченная в некоторой окрестности точки $a$.\\[2mm]
+    "$3) \to 2) $":\\
+    $\exists \delta_1 >0 f\in H(\overset{\circ}{U}_{\delta_1}(a)) \Rightarrow$ по теореме Лорана\\
+    $\Rightarrow f=\sum_{n=-\infty}^{+\infty}c_n(z-a)^n$ в $\overset{\circ}{U}_{\delta_1}(a).$\\
+    Пусть $\delta_1 > 0; f$ ограниченна $M>0$ в $\overset{\circ}{U}_{\delta_1}(a), \rho \in (0; \delta_1)\Rightarrow$ по неравенству Коши $\Rightarrow \forall n\in\mathbb{Z} |c_n|\leq \frac{M}{\rho^n}$\\
+    Если $n<0$, то $\frac{M}{\rho^n} \to 0$ при $\rho \to 0$. Но $|c_n|$ не зависит от выбора $\rho$. Поэтому $c_n = 0$ при $n<0 \Rightarrow 2)$.\\[2mm]
+\end{proof}
+
+\textbf{Характеризация полюса:}\\
+Если точка $a\in \mathbb{C}$ --- изолированная особая точка функции $f$, то следующие условия эквивалентны:
+\begin{enumerate}
+    \item $a$ --- устранимая особая точка
+    \item Главная часть Лорановского разложения функции $f$ в окрестности точки $a$ содержит конечное (>0) число слагаемых:
+    $$f(z)=\sum_{n=-N}^\infty c_n(z-a)^n,$$
+    где $N>0, c_{-N}\neq 0$ 
+    \item $f=\frac{1}{\varphi}$, где $\varphi$ --- голоморфная в точке $a$ и $\varphi(a)\neq 0$.
+\end{enumerate}
+
+\begin{proof}
+    \ \\
+    "$2) \to 1)$":\\
+    $f(z)=\sum_{n=-N}^\infty c_n(z-a)^n=\frac{1}{(z-a)^N}\sum_{n=-N}^\infty c_n (z-a)^{n+N},$\\
+    где $\frac{1}{(z-a)^N}\to \infty$ при $z\to a$ и $\sum_{n=-N}^\infty c_n (z-a)^{n+N}$ --- степенной ряд $\Rightarrow c_{-N} \neq 0$.\\[2mm]
+    "$1) \to 3)$":\\
+    $\varphi(z)=
+    \begin{cases}
+        \frac{1}{f(z)}\text{, если }z\neq a\\
+        0\text{, если }z=a
+    \end{cases}
+    \text{ --- голоморфнаяв точке }a$\\
+    Функция $\frac{1}{f(z)}$ имеет устарнимую особую точку в $a \Rightarrow \frac{1}{f(z)}=\sum_{n=0}^\infty a_n(z-a)^n$\\
+    $\lim\limits_{z\to a}\frac{1}{f(z)}=0\Rightarrow a_0 =0$\\[2mm]
+    "$3) \to 2)$":
+    Пусть $N$ -- такое, что $a_0 = 0 = a_1=...=a_{N-1}, \ a_N \neq 0$.   Тогда $\frac{1}{f(z)}=\sum_{n=N}^\infty a_n(z-a)^n=\varphi(z) \Rightarrow $
+    $$\Rightarrow f(z)=\frac{1}{\sum_{n=N}^\infty a_n(z-a)^n}=\frac{1}{(z-a)^N}\cdot \frac{1}{\sum_{n=N}^\infty a_n (z-a)^{n-N}},$$
+    где $\sum_{n=N}^\infty a_n (z-a)^{n-N}$ -- голоморфна в точке $a$, равна $a_N \neq 0$;\\
+    $\frac{1}{\sum_{n=N}^\infty a_n (z-a)^{n-N}}$ -- голоморфна в окрестности точки $a$.\\
+    $\Rightarrow f(z)=\frac{1}{(z-a)^N}\sum_{k=0}^\infty c_k (z-a)^k = \sum_{k=0}^\infty c_k (z-a)^{k-N}=$\\
+    $=\sum_{n=-N}^\infty \tilde{c_n}(z-a)^n; \tilde{c_{-N}}=c_0\neq 0$\\[2mm]
+\end{proof}
+
+\textbf{Характеризация существенно особой точки:}\\
+Изолированная особая точка $a$ функции $f$ является существенно особой
+$$\Leftrightarrow$$
+Главная часть Лорановского разложения функции $f$ в окрестности точки $a$ имеет бесконечное число слагаемых.\\
+\begin{proof}
+    \ \\
+    Следует из характеризаций устранимой особой точки и вычета.\\[2mm]
+\end{proof}
+
+
+\textbf{Вычетом} функции $f$ в точке $\infty$ называют число:
+$$res\, f(\infty) = \frac{1}{2\pi i} \oint\limits_{-\gamma_R}f(z)dz,$$
+где $\gamma_R=\{a: |z|=R\}$, $R$ -- такое, что вне $\gamma_R$ нет особых точек, кроме, может быть $\infty$.
+
+\textbf{Теорема о связи вычета в бесконечности с рядом Лорана:}
+
+Если в некоторой выколотой окрестности $\infty$ функция $f$ голоморфна, то:
+$$res \, f(\infty) = -c_{-1},$$
+где $c_{-1}$ --- коэффициент разложения $f$ в ряд Лорана в окрестности $\infty$.
+
+\begin{proof}
+    \ \\
+    $res \, f(\infty) =\frac{1}{2\pi i} \oint\limits_{-\gamma_R} f(z)dz = \frac{1}{2\pi i}\sum_{n=-\infty}^{+\infty} \oint\limits_{-\gamma_R}c_n z^n dz =$\\
+    $= \frac{1}{2\pi i}c_{-1} \oint\limits_{-\gamma_R} \frac{dz}{z} = -c_{-1}$\\
+    Прим.: $ \oint\limits_{-\gamma_R} \frac{dz}{z} = -2\pi i$, т.к. обход по часовой стрелке.
+\end{proof}
