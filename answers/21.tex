@@ -1,9 +1,6 @@
 \newpage 
 \section{Вычисление несобственных интегралов с использование вычетов. Лемма Жордана и теорема о вычислении несобственного интеграла от рациональной функции с помощью вычетов.}
 
-\textbf{Вычисление несобственного интеграла от тригонометрических функций.}\\[2mm]
-
-
 \textbf{Лемма Жордана:}\\[2mm]
 Пусть  $f(z)$ --- непрерывная функция в $\{Im\,z \geq 0\}$ за исключением изолированного множества точек;
 
@@ -34,5 +31,15 @@ $Q_n(x)\neq 0$ при $x \in \mathbb{R}$ (не имеет действитель
     $\left|\int\limits_{\gamma_R}f(z)dz\right|\leq \underset{a\in\gamma_R}{\max}|f(z)|\cdot L(\gamma_R)\sim c\frac{1}{R^{n-m}}\pi R = \frac{c\pi}{R^{n-m-1}}\to 0$ при $R\to \infty, n-m-1>0$\\[2mm]
     Откуда следует, что $\left|\int\limits_{\gamma_R} f(z)dz\right| \to 0$ при $R\to \infty$.\\[2mm]
     По теореме Коши: $\oint\limits_{\gamma D_R}f(z)dz = 2\pi i \sum\limits_{j=1}^k res\, f(z_j)$ не зависит от $R$, при $R\to \infty:$\\[2mm]
-    $\oint\limits_{\gamma D_R}f(z)dz = \int\limits_{\gamma_R}f(z)dz + \int\limits_{-R}^R f(x)dx \to 0+\int\limits_{-\infty}^{-\infty}f(x)dx$.    
+    $\oint\limits_{\gamma D_R}f(z)dz = \int\limits_{\gamma_R}f(z)dz + \int\limits_{-R}^R f(x)dx \to 0+\int\limits_{-\infty}^{-\infty}f(x)dx$.
 \end{proof}
+
+\newpage
+\textbf{Пример вычисления несобственного интеграла от тригонометрических функций:}\\
+Вычислить интеграл $\int\limits_{-\infty}^{+\infty} \frac{x\cos x dx}{x^2-2x+10}$\\
+Функция $f(z)=\frac{ze^{iz}}{z^2-2z+10}$ удовлетворяет условиями леммы Жордана. Здесь $t=1$ и $F(z)=\frac{z}{z^2-2z+10}$. Особыми точками функции $f(z)$ являются полюсы первого порядка $z=1\pm 3i$. В верхней полуплоскости иммется единственная особая точка $z=1+3i$. Вычислим относительно этой точки вычет функции $f(z)$:
+$$res\, f(1+3i) = \frac{ze^{iz}}{(z^2-2z+10)'}=\frac{(1+3i)e^{-3+i}}{6i}$$
+Следовательно, $\int\limits_{-\infty}^{+\infty} \frac{xe^{ix}dx}{x^2-2x+10}=2\pi i \frac{(1+3i)e^{-3+i}}{6i} = \frac{\pi}{3}e^{-3}(1+3i)(\cos 1+i\sin 1)=\frac{\pi}{3} e^{-3}(\cos 1 - 3\sin 1)+i\frac{\pi}{3}e^{-3}(3\cos 1+\sin 1).$\\
+Сравнивая в обеисх частях этого равенства действительные и мнимые части с учитывая, что $$\int\limits_{-\infty}^{+\infty}\frac{xe^{ix}dx}{x^2-2x+10}=\int\limits_{-\infty}^{+\infty}\frac{x\cos x\, dx}{x^2-2x+10}+i\int\limits_{-\infty}^{+\infty}\frac{x\sin x\, dx}{x^2-2x+10}$$ 
+получим $$\int\limits_{-\infty}^{+\infty}\frac{x\cos x\, dx}{x^2-2x+10} = \frac{\pi}{3}e^{-3}(\cos 1-3\sin 1),$$
+$$\int\limits_{-\infty}^{+\infty}\frac{x\sin x\, dx}{x^2-2x+10} = \frac{\pi}{3}e^{-3}(3\cos 1+\sin 1),$$
