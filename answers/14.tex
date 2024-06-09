@@ -50,7 +50,9 @@ $n\in\mathbb{Z}, R_2 < \rho < R_1$
     Интегральная формула Коши: $f(z)=\frac{1}{2\pi i}\cdot \int\limits_{\gamma V'}\frac{f(\xi)}{\xi-z}d\xi = \frac{1}{2\pi i}\oint\limits_{\gamma_R(a)}...-\frac{1}{2\pi i}\oint\limits_{\gamma_r(a)}... (=)$\\
     На $\gamma_R(a)$ обход против часовой стрелки:\\
     $\frac{1}{\xi-z}=\frac{1}{(\xi-a)(1-\frac{z-a}{\xi-a})}=\sum_{n=0}^\infty \frac{(z-a)^n}{(\xi-a)^{n+1}} = \frac{1}{(\xi-a)-(z-a)}=\frac{-1}{(z-a)(1-\frac{\xi-a}{z-a})}=-\frac{1}{z-a}\sum_{n=0}^\infty \frac{(\xi-a)^n}{(z-a)^n}=-\sum_{n=0}^\infty \frac{(\xi-a)^n}{(z-a)^{n+1}} = -\sum_{k=-1}^{-\infty} \frac{(z-a)^k}{(\xi-a)^{k+1}}$\\
-    $(=) \sum_{n=0}^{+\infty} \frac{1}{2\pi i} \oint\limits{\gamma_R(a)\to\gamma_\rho(a)}f(\xi) \frac{(z-a)^n}{(\xi-a)^{n+1}}d\xi = \sum_{k=-1}^{+\infty}\frac{1}{2\pi i}\cdot \oint\limits_{\gamma_r(a)\to \gamma_\rho(r)}f(\xi)\frac{(z-a)^k}{(\xi-a)^{k+1}}d\xi = \sum\limits_{n=0}^{+\infty} c_n(z-a)^n+\sum_{k=-1}^{-\infty}c_k(z-a)^{-k}$ 
+    $(=) \sum_{n=0}^{+\infty} \frac{1}{2\pi i} \oint\limits{\gamma_R(a)\to\gamma_\rho(a)}f(\xi) \frac{(z-a)^n}{(\xi-a)^{n+1}}d\xi =$\\
+    $=\sum_{k=-1}^{+\infty}\frac{1}{2\pi i}\cdot \oint\limits_{\gamma_r(a)\to \gamma_\rho(r)}f(\xi)\frac{(z-a)^k}{(\xi-a)^{k+1}}d\xi = \sum\limits_{n=0}^{+\infty} c_n(z-a)^n+$\\
+    $+\sum_{k=-1}^{-\infty}c_k(z-a)^{-k}$ 
     
 \end{proof}
 
