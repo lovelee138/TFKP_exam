@@ -57,25 +57,25 @@ $N-P = \frac{1}{2 \pi}\Delta_{\partial G}arg f$.
     \ \\
     Пусть $\partial G: \ z=z(t), \ t\in[\alpha, \beta]$,
     $\Phi(t)=\ln f(z(t))$, где $\ln f$ непрерывно меняется при росте $t$ от $\alpha$ до $\beta$. Тогда $\Phi'(t)=\frac{f'(z(t))}{f(z(t))}\cdot z'(t)$ и поэтомy
-    $$\int\limits_{\partial G}\frac{f'}{f}dz = \int\limits_{\alpha}^{beta} \frac{f'(z(t))}{f(z(t))}z'(t)dt=\Phi(\beta) - \Phi(\alpha) = $$
-    $$= \ln f(z(\beta))-\ln f(z(\alpha)) = \ln |f(z(\beta))| + i \, arg \, f(z(\beta))-\ln |f(z(\alpha))|-$$
-    $$= -i\cdot arg\, f(z(\alpha))=i\Delta_{\partial G}arg \, f = \text{ (по т. о логар.выч.) }N-P=$$
-    $$=\frac{1}{2\pi i}\int\limits{\partial G} \frac{f'(z)}{f(z)}dt=\frac{i\Delta_{\partial G}arg\,f}{2\pi i}$$
+    $$\int\limits_{\partial G}\frac{f'}{f}dz = \int\limits_{\alpha}^{\beta} \frac{f'(z(t))}{f(z(t))}z'(t)dt=\Phi(\beta) - \Phi(\alpha) = $$
+    $$= \ln f(z(\beta))-\ln f(z(\alpha)) = \ln |f(z(\beta))| + i \, arg \, f(z(\beta))-\ln |f(z(\alpha))| -$$
+    $$ -i\cdot arg\, f(z(\alpha))=i\Delta_{\partial G}arg \, f = \text{ (по т. о логар.выч.) }N-P=$$
+    $$=\frac{1}{2\pi i}\int\limits_{\partial G} \frac{f'(z)}{f(z)}dt=\frac{i\Delta_{\partial G}arg\,f}{2\pi i}$$
 \end{proof}
 
 
 \textbf{Теорема Руше:}\\
-Пусть $f,g \in H(G \cup \partial G) \, \textrm{и} \, \forall z \in \partial G |f(z)| > |g(z)|$. \\
+Пусть $f,g \in H(G \cup \partial G) \ \textrm{и} \ \forall z \in \partial G: |f(z)| > |g(z)|$. \\
 Тогда функции f и f+g имеют одинаковое количество нулей в G.\\[2mm]
 
 \begin{proof}
     \ \\
-    $\forall z \in \gamma G |f(z)|>|g(z)|\geq 0$\\
-    $|(f+g)(z)|\geq |f(z)|-|g(z)| > 0$\\
+    $\forall z \in \partial G: |f(z)|>|g(z)|\geq 0$\\
+    $|(f+g)(z)| \geq |f(z)| - |g(z)| > 0$\\
     Отсюда следует, что функция $f$ и $f+g$ не имеют нулей на $\partial G$.\\
     По принципу аргумента $\Delta_{\partial G}arg\, (f+g) = N_{f+g}$ (количество нулей функции $f+g$ в $G$).\\
     С другой стороны:\\
-    $\Delta \gamma G arg\, f(1+\frac{g}{f})=\Delta_{\gamma G} arg\, f+\Delta_{\gamma G}(1+\frac{g}{f})=N_f$\\
+    $\Delta_{\partial G} arg\, f(1+\frac{g}{f})=\Delta_{\partial G} arg\, f+\Delta_{\partial G}(1+\frac{g}{f})=N_f$\\
     
 \end{proof}
 \textbf{Применение:}\\
