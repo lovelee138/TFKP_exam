@@ -22,20 +22,21 @@ $$\Leftrightarrow$$
 \begin{proof}
     \ \\
     $|f(t)|\leq M e^{\alpha t}$ --- условие 3) из определения оригинала\\
-    Пусть $p=\delta +i s$, тогда:
+    Пусть $p=\delta +i s, \ \alpha < \delta$, тогда:
     $$|f(t)e^{-pt}|=|f(t)|\cdot|e^{-\delta t}|\cdot |e^{-ist}|\leq M e^{\alpha t}e^{-\delta t}=Me^{(\alpha-\delta)t}$$
     $|F(p)|=\lim\limits_{b\to + \infty} \left| \int\limits_{0}^{b}f(t)e^{-pt}dt \right| \leq \text{по теореме об оценке}$\\
-    $\leq \lim\limits_{b\to +\infty}\int\limits_{0}^{b}|f(t)e^{-pt}|dt \leq \lim\limits_{b\to \infty}Me^{(\alpha-\delta)t}dt = \lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}e^{(\alpha -\delta)t}|_0^b=$\\
+    $\leq \lim\limits_{b\to +\infty}\int\limits_{0}^{b}|f(t)e^{-pt}|dt \leq \lim\limits_{b\to +\infty}\int\limits_0^b Me^{(\alpha-\delta)t}dt = \lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}e^{(\alpha -\delta)t}|_0^b=$\\
     $=\lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}(e^{(\alpha-\delta)b}-1)=-\frac{M}{\alpha-\delta}=\frac{M}{\delta-\alpha}$, значит по признаку Вейерштрасса сходится равномерно.\\
-    Значит $Re\,(p=\delta+i s)=\delta \Rightarrow Re \, pj>\alpha \Rightarrow F'(p)=\int\limits_0^{+\infty} (-t)f(t)e^{-pt}dt \Rightarrow F(p)$ --- аналитическая функция.  
+    Значит $Re\,(p=\delta+i s)=\delta \Rightarrow Re \, p>\alpha \Rightarrow$\\
+    $\Rightarrow F'(p)=\int\limits_0^{+\infty} (-t)f(t)e^{-pt}dt \Rightarrow F(p)$ --- аналитическая функция.  
 \end{proof}
 
 \textbf{Поведение изображения в бесконечности:}\\[2mm]
-Если изображение $F(p)$ аналитическая функция в $\infty$, то $F(\infty)=0$.\\
-
+Если изображение $F(p)$ --- аналитическая функция в $\infty$,\\
+то $F(\infty)=0$.
 \begin{proof}
     \ \\
-    Из доказательства теоремы 1:
+    Из доказательства предыдущей теоремы:
     $$|F(p)|\leq \frac{M}{\delta - \alpha},$$ где $\alpha=const, \, \delta=Re\,p$.\\
     Если $Re\,p\to\infty,$ то $\frac{M}{\delta-\alpha}\to 0 \Rightarrow |F(p)|\to 0,$ т.к. $F(p)\to F(\infty)$.
 \end{proof}
@@ -46,9 +47,9 @@ $$\Leftrightarrow$$
     $\nu(t)=
     \begin{cases}
         1\text{, при }t\geq 0\\
-        0\text{, при }t\geq 0
+        0\text{, при }t< 0
     \end{cases}$\\
-    $\int\limits_{0}^{\infty}1e^{-pt}dt=-\frac{e^{-pt}}{p}|_0^{+\infty}$\\
+    $\int\limits_{0}^{\infty}1e^{-pt}dt=-\frac{e^{-pt}}{p}\bigg|_0^{+\infty}$\\
     При $p=\delta +i s: \ |e^{-pt}|=|e^{-\delta t}\cdot e^{-i s t}|$\\
     Тогда $1\risingdotseq \frac{1}{p}$
 
