@@ -20,7 +20,7 @@ $$f(z_0)=\frac{1}{2\pi i} \cdot \oint\limits_{\partial D} \frac{f(z)}{z-z_0}dz$$
     $$\int\limits_{\partial G}\frac{f(z)}{z-z_0}dz=0,$$
     т.к. $\frac{f(z)}{z-z_0} \in H(G)$\\
     Имеем $\partial G = \partial D \cup (-L_1)$:\\
-    $$\oint\limits{\partial D}\frac{f(z)}{z-z_0}dz-\oint\limits_{L}\frac{f(z)}{z-z_0}dz=0$$
+    $$\oint\limits_{\partial D}\frac{f(z)}{z-z_0}dz-\oint\limits_{L}\frac{f(z)}{z-z_0}dz=0$$
 
     2) Пусть $\gamma: \, z=z+r\cdot e^{it}, \ t\in[0, 2\pi], \ r>0$\\
     $f(z)=(z-a)^n; \ n\in \mathbb{Z}$\\
@@ -30,7 +30,7 @@ $$f(z_0)=\frac{1}{2\pi i} \cdot \oint\limits_{\partial D} \frac{f(z)}{z-z_0}dz$$
 
     3) Пусть $\sigma_1$ -- радиус $L_1$ и $L_1 \subset D$\\
     $I = \left| \frac{1}{2\pi i } \oint\limits_{L_1} \frac{f(z)}{z-z_0}dz-f(z_0) \right| = \left| \frac{1}{2\pi i} \oint\limits_{L_1} \frac{f)(z)}{z-z_0}dz - f(z_0)\frac{1}{2\pi i}\int\limits_{L_1} \frac{dz}{z-z_0}\right| = $\\
-    $= \left| \frac{1}{2\pi i}\oint\limits_{L_1} \frac{f(z)-f(z_0)}{z-z_0}dz \right| \leq \frac{1}{2\pi |i|} \oint\limits_{L_1}\left| \frac{f(z)-f(z_0)}{z-z_0} \right|z'(t)dt$\\
+    $= \left| \frac{1}{2\pi i}\oint\limits_{L_1} \frac{f(z)-f(z_0)}{z-z_0}dz \right| \leq \frac{1}{2\pi |i|} \oint\limits_{L_1}\left| \frac{f(z)-f(z_0)}{z-z_0} \right||z'(t)|dt$\\
 
     4) Так как $f \in H(D)$, то $\forall \varepsilon > 0 \, \exists \delta (\varepsilon)>0: \, |z-z_0|<\delta \rightarrow |f(z)-f(z_0)|<\varepsilon$\\
     Имеем $z\in L_1: \ |z-z_0| = \sigma_1$:\\
@@ -48,5 +48,7 @@ $$f^{(n)}(z_0) = \frac{n!}{2\pi i} \int\limits_{\partial G}\frac{f(\xi)}{(\xi-z_
 \begin{proof}
     \ \\
     По теоремам о разложении голоморфной функции в степенной ряд и теореме о единственности разложения в степенной ряд:\\
-    $c_n=\frac{1}{2\pi} \oint\limits_{\gamma r} \frac{f(\xi)d\xi}{(\xi-z_0)^{n+1}}$; $\oint\limits_{\gamma r}...=\oint\limits_{\gamma G}$
+    $c_n=\frac{1}{2\pi} \oint\limits_{{\gamma}_r} \frac{f(\xi)d\xi}{(\xi-z_0)^{n+1}}$ \\[2mm]
+    $f^{(n)}(z_0) = c_n n! = \frac{n!}{2 \pi i}\int \limits_{{\gamma}_r} \frac{f(\xi)}{(\xi - z_0)^{n+1}}\xi$ \\[2mm]
+    $\oint\limits_{{\gamma}_r}\dots=\oint\limits_{\partial G}\dots \Rightarrow$ утверждение теоремы
 \end{proof}

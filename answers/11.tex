@@ -12,24 +12,25 @@
 	$f(z) = \frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \frac{f(\xi)}{\xi - z} d\xi$ если $|z-z_0| < r$\\[2mm]
 	$\frac{1}{\xi - z} = \frac{1}{\xi - z_0 - (z - z_0)} = \frac{1}{\xi - z_0} \cdot \frac{1}{1 - \frac{z-z_0}{\xi - z_0}} \ (=)$\\[2mm]
 	$\frac{|z-z_0|}{|\xi - z_0|} = \frac{|z - z_0|}{r} < 1$\\[2mm]
-	$(=) \ \frac{1}{z-z_0} \cdot \sum_{n=0}^{\infty} \left( \frac {z-z_0}{\xi - z_0}\right)^n, \ \frac{1}{2 \pi i}f(z)$ -- непрерывна. \\[2mm]
-	Тогда $ \ \frac{1}{2 \pi i}f(z) \cdot \frac{1}{\xi - z} = \frac{1}{2 \pi i} \sum \frac{f(\xi)(z-z_0)^n}{0}$ -- сходится равномерно, значит можно интегрировать почленно. \\[2mm]
+	$(=) \ \frac{1}{\xi-z_0} \cdot \sum_{n=0}^{\infty} \left( \frac {z-z_0}{\xi - z_0}\right)^n, \ \frac{1}{2 \pi i} \cdot f(z)$ -- непрерывна. \\[2mm]
+	Тогда $ \ \frac{1}{2 \pi i} \cdot f(z) \cdot \frac{1}{\xi - z} = \frac{1}{2 \pi i} \sum_{n=0}^\infty \frac{f(\xi)(z-z_0)^n}{(\xi - z_0)^{n+1}}$ -- сходится равномерно, значит можно интегрировать почленно. \\[2mm]
 	Тогда получаем утверждение теоремы:
 	$$
-	f(z) = \frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \sum_{n=0}^{\infty}\frac{f(\xi) (z - z_0)^n}{(\xi - z_0)^{n+1}}d\xi = \frac{1}{2 \pi i}\sum_{n=0}^{\infty}(z-z_0)^n \int \limits_{{\gamma}_r} \frac{f(\xi)}{(z-z_0)^{n+1}}
+	f(z) = \frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \sum_{n=0}^{\infty}\frac{f(\xi) (z - z_0)^n}{(\xi - z_0)^{n+1}}d\xi =$$ 
+	$$= \frac{1}{2 \pi i}\sum_{n=0}^{\infty}(z-z_0)^n \int \limits_{{\gamma}_r} \frac{f(\xi)}{(\xi-z_0)^{n+1}}d\xi
 	$$
 \end{proof}
 
 
 \textbf{Неравенство Коши для коэффициентов ряда Тейлора:}\\[2mm]
-Пусть функция $f \in H(\overline{U})$, где $U = \{ z: |z-z_0|d \leq r\}$ и $\partial\overline{U} = {\gamma}_r, \ |f(z) \leq M$. \\[2mm]
+Пусть функция $f \in H(\overline{U})$, где $\overline{U} = \{ z: |z-z_0| \leq r\}$ и $\partial\overline{U} = {\gamma}_r, \ |f(z) \leq M$. \\[2mm]
 Тогда коэффициенты ряда Тейлора $f$ удовлетворяют следующему неравеству: $|c_n| \leq \frac{M}{r^n}$ 
 
 
 \begin{proof}
 	\ \\
 	\begin{equation*}
-		|c_n| = |\frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \frac{f(\xi)}{(\xi - z_0)^{n+1}}d\xi| \leq \frac{1}{2 \pi} \cdot \frac{M}{r^{n+1}} \cdot 2 \pi r = \frac{M}{r^n},
+		|c_n| = \left|\frac{1}{2 \pi i} \int \limits_{{\gamma}_r} \frac{f(\xi)}{(\xi - z_0)^{n+1}}d\xi\right| \leq \frac{1}{2 \pi} \cdot \frac{M}{r^{n+1}} \cdot 2 \pi r = \frac{M}{r^n},
 	\end{equation*}
 	так как $|f(\xi)| \leq M$ и $(\xi - z)^{n+1} \leq r^{n+1}$
 \end{proof}
@@ -42,7 +43,7 @@ $f \in H(\mathbb{C})$ и $f$ -- ограниченная функция $\Righta
 \begin{proof}
 	По теореме о разложении голоморфной функции в ряд Тейлора 
 	функция $f$ представима в виде $f = \sum_{n=0}^{\infty} c_n (z - z_0)^n$ внутри окружности любого радиуса $R$,
-	причем по этой же теореме коэффициенты ряда не зависят от $R$.\\[2mm]
+	причем коэффициенты ряда не зависят от $R$.\\[2mm]
 	Тогда из неравенства Коши для коэффициентов ряда Тейлора:
 	$$
 	|c_n| \leq \frac{M}{R^n}
