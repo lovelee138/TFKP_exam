@@ -51,8 +51,8 @@
 		f(z_0) = c_0 \\
 		f'(z_0) = \sum_{n=1}^{\infty}nc_n(z-z_0)^{n-1} = c_1 \\
 		\dots \\
-		f^{(k)} = \sum_{n=k}^{\infty} n(n-1)\dots(n-k+1)c_n(z-z_0)^{n-k} = \\ 
-		= k(k-1) \cdot \dots \cdot 1 = k!c_k \Rightarrow \\ 
+		f^{(k)} = \sum_{n=k}^{\infty} n(n-1)\ldots(n-k+1)c_n(z-z_0)^{n-k} = \\ 
+		= k(k-1) \cdot \ldots \cdot 1 = k!c_k \Rightarrow \\ 
 		\Rightarrow c_k = \frac{f^{(k)}(z_0)}{k!}
 	\end{gathered}
 	\end{equation*}
@@ -60,7 +60,7 @@
 
 
 \textbf{Теорема Морера:}\\[2mm]
-Пусть $D \subset \mathbb{C}$ -- область, $f \in C(D)$ и $\int \limits_{\partial \Delta} = 0$
+Пусть $D \subset \mathbb{C}$ -- область, $f \in C(D)$ и $\int \limits_{\partial \Delta}f(\xi)d\xi = 0$
 для произвольного треугольника $\Delta$ при $\Delta \cup \partial \Delta \subset D$. \\[2mm]
 Тогда $f \in H(D)$
 
@@ -76,9 +76,9 @@
 
 
 \textbf{Теорема об эквивалетности трех определений голоморфности:}
-3 следующих утверждения эквивалентны:
+3 следующих утверждения эквивалентны:\\[2mm]
 R) функция $f$ в некоторой окрестности $U(a)$ имеет комплексную производную (Риман) \\[2mm]
-C) $f \in C(U(a))$ и $\int \limits_{\partial \Delta}f(z)dz = 0$ для любого треугольника $\Delta \subset U(a)$ (Коши) 
+C) $f \in C(U(a))$ и $\int \limits_{\partial \Delta}f(z)dz = 0$ для любого треугольника $\Delta \subset U(a)$ (Коши)\\[2mm] 
 W) функция $f$ разложима в степенной ряд в окрестности точки $a$ по $(z-a)$ (Вейерштрасс)
 
 
