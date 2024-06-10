@@ -19,7 +19,7 @@ $$
     $f(z)=\sum_{n=-\infty}^{+\infty}c_n(z-a)^n$ в $\overset{\circ}{U}_{\delta}(a)$, где $f\in H(\overset{\circ}{U}_{\delta}(a))$\\
     $\gamma_r=\{z: |z-a|=r\}, r\in (0, \delta)$, т.е. $\gamma_r \subset \overset{\circ}{U}_{\delta}(a)$\\
     Значит ряд сходится равномерно на $\gamma_r \Rightarrow $\\
-    $\Rightarrow res\,f(z)=\frac{1}{2\pi i}\oint\limits_{\gamma_r}f(z)dz=\frac{1}{2\pi i}\sum_{-infty}^{+\infty}\oint\limits{\gamma_r} c_n(z-a)^ndz=\frac{1}{2\pi i}c_{-1}\cdot 2\pi i$.
+    $\Rightarrow res\,f(z)=\frac{1}{2\pi i}\oint\limits_{\gamma_r}f(z)dz=\frac{1}{2\pi i}\sum_{-\infty}^{+\infty}\oint\limits{\gamma_r} c_n(z-a)^ndz=\frac{1}{2\pi i}c_{-1}\cdot 2\pi i$.
 \end{proof}
 
 
@@ -78,8 +78,8 @@ $$
         \centering
         \includegraphics[width=1\linewidth]{answers/img/ans15.png}
     \end{figure}
-    Окружности, окружающие $a_1, ..., a_\nu$ не пересекаются и лежат внутри $\gamma G$.\\
+    Окружности, окружающие $a_1, ..., a_\nu$ не пересекаются и лежат внутри $\partial G$.\\
     $\tilde{G}=G\backslash (D_1 \cup ...\cup D_\nu), f\in H(\tilde{G})$\\
-    $\int\limits_{\gamma \tilde{G}} f(z)dz = 0 \Rightarrow \int\limits_{\gamma G}...+\sum_{j=1}^\nu \int\limits_{-\gamma D_j}...=0 \Rightarrow$\\
-    $\Rightarrow \int\limits_{\gamma G}...-\sum_{j=1}^\nu 2\pi i \cdot res\, f(a_j)=0 \Rightarrow \int\limits_{\gamma G}f(z)dz=2\pi i \sum_{j=1}^\nu res\,f(a_j)$.
+    $\int\limits_{\partial \tilde{G}} f(z)dz = 0 \Rightarrow \int\limits_{\partial G}...+\sum_{j=1}^\nu \int\limits_{-\partial D_j}...=0 \Rightarrow$\\
+    $\Rightarrow \int\limits_{\partial G}...-\sum_{j=1}^\nu 2\pi i \cdot res\, f(a_j)=0 \Rightarrow \int\limits_{\partial G}f(z)dz=2\pi i \sum_{j=1}^\nu res\,f(a_j)$.
 \end{proof}

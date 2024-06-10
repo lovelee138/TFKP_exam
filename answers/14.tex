@@ -47,19 +47,23 @@ $n\in\mathbb{Z}, R_2 < \rho < R_1$
     Пусть $r, R$ -- такие, что $R_2<r<R<R_1$.\\
     Тогда $V'=\{z\in \mathbb{C}: r<|z-a|<R\}$\\
     $\gamma V'=\gamma_r(a)\cup \gamma_R(a)\subset V, a\in V'$\\
-    Интегральная формула Коши: $f(z)=\frac{1}{2\pi i}\cdot \int\limits_{\gamma V'}\frac{f(\xi)}{\xi-z}d\xi = \frac{1}{2\pi i}\oint\limits_{\gamma_R(a)}...-\frac{1}{2\pi i}\oint\limits_{\gamma_r(a)}... (=)$\\
+    Интегральная формула Коши: $f(z)=\frac{1}{2\pi i}\cdot \int\limits_{\partial V'}\frac{f(\xi)}{\xi-z}d\xi = \frac{1}{2\pi i}\oint\limits_{\gamma_R(a)}...-\frac{1}{2\pi i}\oint\limits_{\gamma_r(a)}... (=)$\\
     На $\gamma_R(a)$ обход против часовой стрелки:\\
-    $\frac{1}{\xi-z}=\frac{1}{(\xi-a)(1-\frac{z-a}{\xi-a})}=\sum_{n=0}^\infty \frac{(z-a)^n}{(\xi-a)^{n+1}} = \frac{1}{(\xi-a)-(z-a)}=\frac{-1}{(z-a)(1-\frac{\xi-a}{z-a})}=-\frac{1}{z-a}\sum_{n=0}^\infty \frac{(\xi-a)^n}{(z-a)^n}=-\sum_{n=0}^\infty \frac{(\xi-a)^n}{(z-a)^{n+1}} = -\sum_{k=-1}^{-\infty} \frac{(z-a)^k}{(\xi-a)^{k+1}}$\\
-    $(=) \sum_{n=0}^{+\infty} \frac{1}{2\pi i} \oint\limits{\gamma_R(a)\to\gamma_\rho(a)}f(\xi) \frac{(z-a)^n}{(\xi-a)^{n+1}}d\xi =$\\
-    $=\sum_{k=-1}^{+\infty}\frac{1}{2\pi i}\cdot \oint\limits_{\gamma_r(a)\to \gamma_\rho(r)}f(\xi)\frac{(z-a)^k}{(\xi-a)^{k+1}}d\xi = \sum\limits_{n=0}^{+\infty} c_n(z-a)^n+$\\
-    $+\sum_{k=-1}^{-\infty}c_k(z-a)^{-k}$ 
+    $\frac{1}{\xi-z}=\frac{1}{(\xi-a)(1-\frac{z-a}{\xi-a})}=\sum_{n=0}^\infty \frac{(z-a)^n}{(\xi-a)^{n+1}}$\\ 
+    На $\gamma_r(a)$ обход по часовой стрелке:\\ 
+    $\frac{1}{\xi - z} = \frac{1}{(\xi-a)-(z-a)}=\frac{-1}{(z-a)(1-\frac{\xi-a}{z-a})}=$ \\
+    $=-\frac{1}{z-a}\sum_{n=0}^\infty \frac{(\xi-a)^n}{(z-a)^n}=-\sum_{n=0}^\infty \frac{(\xi-a)^n}{(z-a)^{n+1}} = -\sum_{k=-1}^{-\infty} \frac{(z-a)^k}{(\xi-a)^{k+1}}$\\
+    Тогда:\\
+    $(=) \sum_{n=0}^{+\infty} \frac{1}{2\pi i} \oint\limits_{\gamma_R(a)}f(\xi) \frac{(z-a)^n}{(\xi-a)^{n+1}}d\xi \ +$\\
+    $+\sum_{k=-1}^{-\infty}\frac{1}{2\pi i}\cdot \oint\limits_{\gamma_r(a)}f(\xi)\frac{(z-a)^k}{(\xi-a)^{k+1}}d\xi=$ \\
+    $= \sum\limits_{n=0}^{+\infty} c_n(z-a)^n+\sum_{k=-1}^{-\infty}c_k(z-a)^{-k}$ 
     
 \end{proof}
 
 \textbf{Теорема о единственности разложения в ряд Лорана.}\\[2mm]
 Если в кольце $V = \{z\in\mathbb{C} ~~|~~ r < |z - a| < R\}$
 $$
-(*) f(z) = \sum\limits_{-\infty}^{+\infty}c_n(z - a)^n
+(*) f(z) = \sum\limits_{n=-\infty}^{+\infty}c_n(z - a)^n
 $$
 то
 $$
@@ -88,7 +92,7 @@ $$
 \end{proof}
 
 \textbf{Неравенство Коши для коэффициентов Лорана.}\\[2mm]
-Пусть $V = \{z\in\mathbb{C} ~~|~~ r < |z - a| < R\}$, $f\in H(V)$, \\$\gamma = \{z ~~ | ~~ |z - a| = \rho\}, \rho\in(r,R)$\\
+Пусть $V = \{z\in\mathbb{C} ~~|~~ r < |z - a| < R\}$, $f\in H(V)$, \\$\gamma = \{z ~~ : ~~ |z - a| = \rho\}, \rho\in(r,R)$\\
 $\forall z\in\gamma~~ |f(z)|\le M$, тогда
 $$
 |c_n| \le \frac{M}{\rho^n}, \forall n\in\mathbb{Z}
