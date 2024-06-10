@@ -17,12 +17,12 @@
     \item \textbf{Теорема запаздывания:}\\
     $\forall \tau > 0: f(t-\tau) \risingdotseq e^{-p\tau}\cdot F(p)$
     \item \textbf{Теорема опережения:}\\
-    $\forall \tau > 0: f(t+\tau) \risingdotseq e^{p\tau}[F(p)-\int\limits_0^{\tau}f(t)e^{pt}dt]$
+    $\forall \tau > 0: f(t+\tau) \risingdotseq e^{p\tau}\left[F(p)-\int\limits_0^{\tau}f(t)e^{pt}dt\right]$
     \item \textbf{Теоерема дифференцирования интеграла:}\\
     $f'(t)\risingdotseq p\cdot F(p) -f(0)$
     \begin{proof}
         \ \\
-        $f'(t)\risingdotseq \int\limits_0^{+\infty}f'(t)e^{-pt}dt = f(t)\cdot e^{-pt}|_0^{+\infty} -\int\limits_0^{+\infty} f(t) de^{-pt} = 0 -f(0)e^{-p\cdot 0}+p\int\limits_0^{+\infty}f(t)e^{-pt}dt$\\
+        $f'(t)\risingdotseq \int\limits_0^{+\infty}f'(t)e^{-pt}dt = f(t)\cdot e^{-pt}\bigg|_0^{+\infty} -\int\limits_0^{+\infty} f(t) de^{-pt} = 0 -f(0)e^{-p\cdot 0}+p\int\limits_0^{+\infty}f(t)e^{-pt}dt$\\
         $|f(t)e^{-pt}|\leq M\cdot e^{(\alpha-Re\,p)t}\to0$ при $r\to +\infty, \alpha -Re\,p <0$\\
         $f'(t)\risingdotseq -f(0)+p\cdot F(p)$
     \end{proof}
