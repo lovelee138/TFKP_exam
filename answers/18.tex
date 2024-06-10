@@ -7,16 +7,16 @@
 Логарифмический вычет ф. $f(z)$ в точке $a$ равен:
 \begin{enumerate}
     \item порядку нуля $a$, если $a$ -- нуль
-    \item пордяку полюса $a$, если $a$ -- полюс
+    \item порядку полюса $a$, если $a$ -- полюс
 \end{enumerate}
 
 \begin{proof}
     \ \\
     1) Пусть $a$ --- нуль порядка $n$ ф-ии $f(z)$, тогда:\\
-    $f(z) =a_n(z-z)^n + a_{n+1}(z-a)^{n+1}+...=(z-a)^n\cdot \varphi(z)$, где
+    $f(z) =a_n(z-a)^n + a_{n+1}(z-a)^{n+1}+...=(z-a)^n\cdot \varphi(z)$, где
     $\varphi(z)$ --- сумма степенного ряда, откуда следует, что $\varphi \in H$\\[2mm]
-    $\varphi(z)=c_n\neq0\Rightarrow \frac{f'(z)}{f(z)}=\frac{n(z-a)^{n-1}\cdot \varphi(z)+(z-a)^{n}\varphi'(z)}{(z-a)^n \varphi(z)}=\frac{1}{z-a}(n+(z-a)\cdot \frac{\varphi'(z)}{\varphi(z)}) \Rightarrow a$ --- полюс 1-ого порядка функции $\frac{f'}{f} \Rightarrow C_{-1}=n$, т.к. $\frac{n}{z-a}$ --- главная часть.\\[2mm]
-    2) Пусть $a$ --- полюс порядка $p$, тогда по теорему о полюсе $a$ --- нуль порядка $p$ функции $\frac{1}{f(z)}=g(z)$.\\
+    $\varphi(a)=c_n\neq0\Rightarrow \frac{f'(z)}{f(z)}=\frac{n(z-a)^{n-1}\cdot \varphi(z)+(z-a)^{n}\varphi'(z)}{(z-a)^n \varphi(z)}=\frac{1}{z-a}\left(n+(z-a)\cdot \frac{\varphi'(z)}{\varphi(z)}\right) \Rightarrow a$ --- полюс 1-ого порядка функции $\frac{f'}{f} \Rightarrow C_{-1}=n$, т.к. $\frac{n}{z-a}$ --- главная часть.\\[2mm]
+    2) Пусть $a$ --- полюс порядка $p$, тогда по теореме о полюсе $a$ --- нуль порядка $p$ функции $\frac{1}{f(z)}=g(z)$.\\
     $\frac{f'(z)}{f(z)} = -\frac{d}{dz} Ln\frac{1}{f(z)}$\\
     Тогда логарифмический вычет функции $g$ в точке $a$ равен $p$, а функции $f$ в точке $a$ равен $-p$.
 \end{proof}
@@ -34,14 +34,14 @@
         \item полюса $a_1, .., a_l$ с порядками $p_1, ..., p_l$
         \item нули $b_1, .., b_m$ с порядками $n_1, ..., n_m$
     \end{enumerate}
-    Тогда по лемме о логарифмическом вычете $\frac{f'}{f}(a_j)=-p_j$, $res\frac{f'}{f}(b_s)=n_s$\\
+    Тогда по лемме о логарифмическом вычете $res\frac{f'}{f}(a_j)=-p_j$, $res\frac{f'}{f}(b_s)=n_s$\\
     По теореме Коши:
     $$\frac{1}{2\pi i}\int\limits_{\partial G} \frac{f'(z)}{f(z)}dz =\frac{1}{2\pi i}\cdot 2\pi i \left(\sum_{j=1}^l res\frac{f'}{f} (a_j) + \sum_{s=1}^m res \frac{f'}{f)}(b_s)\right) =$$
     $$= - \sum_{j=1}^l p_j +\sum_{s=1}^m n_s = N-P$$
 \end{proof}
 
 
-$\Delta_{\gamma}arg f = 2\pi k$, k -- количество обходов точки О f(z), $z \in \gamma$, с учетом приращения.
+$\Delta_{\gamma}arg f = 2\pi k$, k -- количество обходов точки $О$ функцией f(z), $z \in \gamma$, с учетом направления.
 
 \begin{figure}[h]
     \centering
@@ -59,8 +59,8 @@ $N-P = \frac{1}{2 \pi}\Delta_{\partial G}arg f$.
     $\Phi(t)=\ln f(z(t))$, где $\ln f$ непрерывно меняется при росте $t$ от $\alpha$ до $\beta$. Тогда $\Phi'(t)=\frac{f'(z(t))}{f(z(t))}\cdot z'(t)$ и поэтомy
     $$\int\limits_{\partial G}\frac{f'}{f}dz = \int\limits_{\alpha}^{\beta} \frac{f'(z(t))}{f(z(t))}z'(t)dt=\Phi(\beta) - \Phi(\alpha) = $$
     $$= \ln f(z(\beta))-\ln f(z(\alpha)) = \ln |f(z(\beta))| + i \, arg \, f(z(\beta))-\ln |f(z(\alpha))| -$$
-    $$ -i\cdot arg\, f(z(\alpha))=i\Delta_{\partial G}arg \, f = \text{ (по т. о логар.выч.) }N-P=$$
-    $$=\frac{1}{2\pi i}\int\limits_{\partial G} \frac{f'(z)}{f(z)}dt=\frac{i\Delta_{\partial G}arg\,f}{2\pi i}$$
+    $$ -i\cdot arg\, f(z(\alpha))=i\Delta_{\partial G}arg \, f \Rightarrow \text{ (по т. о логар.выч.): }$$
+    $$N-P==\frac{1}{2\pi i}\int\limits_{\partial G} \frac{f'(z)}{f(z)}dt=\frac{i\Delta_{\partial G}arg\,f}{2\pi i}$$
 \end{proof}
 
 
@@ -75,7 +75,9 @@ $N-P = \frac{1}{2 \pi}\Delta_{\partial G}arg f$.
     Отсюда следует, что функция $f$ и $f+g$ не имеют нулей на $\partial G$.\\
     По принципу аргумента $\Delta_{\partial G}arg\, (f+g) = N_{f+g}$ (количество нулей функции $f+g$ в $G$).\\
     С другой стороны:\\
-    $\Delta_{\partial G} arg\, f(1+\frac{g}{f})=\Delta_{\partial G} arg\, f+\Delta_{\partial G}(1+\frac{g}{f})=N_f$\\
+    $\Delta_{\partial G} arg\, f(1+\frac{g}{f})=\Delta_{\partial G} arg\, f+\Delta_{\partial G}(1+\frac{g}{f})=N_f,$\\
+    так как $\forall z \in \partial G: \ \left|\frac{g}{f}\right|<1.$
+
     
 \end{proof}
 \textbf{Применение:}\\
