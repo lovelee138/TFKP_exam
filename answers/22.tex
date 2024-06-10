@@ -3,10 +3,10 @@
 
 
 Пусть $f(t)$ --- функция, $t \in \mathbb{R}$\\
-\textbf{Преобразование Лапласа} функции $f$ --- это $$F(p)=\int\limits_{0}^{+\infty}f(t)e^{-pt}dt, \in \mathbb{C}$$
+\textbf{Преобразование Лапласа} функции $f$ --- это $$F(p)=\int\limits_{0}^{+\infty}f(t)e^{-pt}dt, p \in \mathbb{C}$$
 Обозначение: $F(p)\risingdotseq f(t), f(t)\fallingdotseq F(p)$\\[2mm]
 Функцию $f(t)$ называют \textbf{оригиналом}
-$$\Rightarrow$$
+$$\Leftrightarrow$$
 \begin{enumerate}
     \item $f(t)$ --- кусочно-непрерывная при $t\geq 0$
     \item $f()t)=0$ при $t<0$
@@ -25,7 +25,7 @@ $$\Rightarrow$$
     Пусть $p=\delta +i s$, тогда:
     $$|f(t)e^{-pt}|=|f(t)|\cdot|e^{-\delta t}|\cdot |e^{-ist}|\leq M e^{\alpha t}e^{-\delta t}=Me^{(\alpha-\delta)t}$$
     $|F(p)|=\lim\limits_{b\to + \infty} \left| \int\limits_{0}^{b}f(t)e^{-pt}dt \right| \leq \text{по теореме об оценке}$\\
-    $\leq \lim\limits_{b\to +\infty}\int_{0}^{b}|f(t)e^{-pt}|dt \leq \lim\limits_0^bMe^{(\alpha-\delta)t}dt = \lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}e^{(\alpha -\delta)t}|_0^b=$\\
+    $\leq \lim\limits_{b\to +\infty}\int\limits_{0}^{b}|f(t)e^{-pt}|dt \leq \lim\limits_{b\to \infty}Me^{(\alpha-\delta)t}dt = \lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}e^{(\alpha -\delta)t}|_0^b=$\\
     $=\lim\limits_{b\to +\infty}\frac{M}{\alpha-\delta}(e^{(\alpha-\delta)b}-1)=-\frac{M}{\alpha-\delta}=\frac{M}{\delta-\alpha}$, значит по признаку Вейерштрасса сходится равномерно.\\
     Значит $Re\,(p=\delta+i s)=\delta \Rightarrow Re \, pj>\alpha \Rightarrow F'(p)=\int\limits_0^{+\infty} (-t)f(t)e^{-pt}dt \Rightarrow F(p)$ --- аналитическая функция.  
 \end{proof}
