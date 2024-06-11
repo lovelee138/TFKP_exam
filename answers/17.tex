@@ -54,24 +54,26 @@ $$f(z)=\sum_{n=-\infty}^{+\infty} c_n z^n\text{, обл. сход. содерж�
 \begin{proof}
     \ \\
     "$2) \to 1)$":\\
-    $f(z)=\sum_{n=-\infty}^N c_n z^n=z^N\sum_{n=-N}^\infty c_n (z-a)^{n+N},$\\
-    где $\frac{1}{(z-a)^N}\to \infty$ при $z\to a$ и $\sum_{n=-N}^\infty c_n (z-a)^{n+N}$ --- степенной ряд $\Rightarrow c_{-N} \neq 0$.\\[2mm]
+    $f(z)=\sum_{n=-\infty}^N c_n z^n=z^N\sum_{n=-\infty}^N c_n z^{n-N},$\\
+    где $z^N\to \infty$ при $z\to \infty$ и $\sum_{n=-\infty}^N c_n z^{n-N}$ --- \\
+    --- степенной ряд, $c_{N} \neq 0 \Rightarrow f(\infty) = \infty$.\\[2mm]
     "$1) \to 3)$":\\
     $\varphi(z)=
     \begin{cases}
-        \frac{1}{f(z)}\text{, если }z\neq a\\
-        0\text{, если }z=a
+        \frac{1}{f(z)}\text{, если }z\neq \infty\\
+        0\text{, если }z=\infty
     \end{cases}
     \text{ --- голоморфнаяв точке }a$\\
-    Функция $\frac{1}{f(z)}$ имеет устарнимую особую точку в $a \Rightarrow \frac{1}{f(z)}=\sum_{n=0}^\infty a_n(z-a)^n$\\
-    $\lim\limits_{z\to a}\frac{1}{f(z)}=0\Rightarrow a_0 =0$\\[2mm]
-    "$3) \to 2)$":
-    Пусть $N$ -- такое, что $a_0 = 0 = a_1=...=a_{N-1}, \ a_N \neq 0$.   Тогда $\frac{1}{f(z)}=\sum_{n=N}^\infty a_n(z-a)^n=\varphi(z) \Rightarrow $
-    $$\Rightarrow f(z)=\frac{1}{\sum_{n=N}^\infty a_n(z-a)^n}=\frac{1}{(z-a)^N}\cdot \frac{1}{\sum_{n=N}^\infty a_n (z-a)^{n-N}},$$
-    где $\sum_{n=N}^\infty a_n (z-a)^{n-N}$ -- голоморфна в точке $a$, равна $a_N \neq 0$;\\
-    $\frac{1}{\sum_{n=N}^\infty a_n (z-a)^{n-N}}$ -- голоморфна в окрестности точки $a$.\\
-    $\Rightarrow f(z)=\frac{1}{(z-a)^N}\sum_{k=0}^\infty c_k (z-a)^k = \sum_{k=0}^\infty c_k (z-a)^{k-N}=$\\
-    $=\sum_{n=-N}^\infty \tilde{c_n}(z-a)^n; \tilde{c_{-N}}=c_0\neq 0$\\[2mm]
+    Функция $\frac{1}{f(z)}$ имеет устрaнимую особую точку в $\infty \Rightarrow$ \\ 
+    $\Rightarrow \frac{1}{f(z)}=\sum_{n=0}^\infty a_n z^n$\\
+    $\lim\limits_{z\to a}\frac{1}{f(z)}=0 \Rightarrow a_0 =0$\\[2mm]
+    "$3) \to 2)$":\\
+    Пусть $N$ -- такое, что $a_0 = 0 = a_1=...=a_{N-1}, \ a_N \neq 0$.   Тогда $\frac{1}{f(z)}=\sum_{n=-N}^{-\infty} a_n z^n=\varphi(z) \Rightarrow $
+    $$\Rightarrow f(z)=\frac{1}{\sum_{n=-N}^{-\infty} a_n z^n}={z^N}\cdot \frac{1}{\sum_{n=-N}^{-\infty} a_n z^{n-N}},$$
+    где $\sum_{n=N}^\infty a_n z^{n-N}$ -- голоморфна в точке $\infty$, равна $a_N \neq 0$;\\
+    $\frac{1}{\sum_{n=N}^\infty a_n z^{n-N}}$ -- голоморфна в окрестности точки $\infty$.\\
+    $\Rightarrow f(z)=z^N\sum_{k=0}^{-\infty} c_k z^k = \sum_{k=0}^{-\infty} c_k z^{k-N}=$\\
+    $=\sum_{n=N}^{-\infty} \tilde{c_n}z^n; \ \tilde{c_{N}}=c_0\neq 0$\\[2mm]
 \end{proof}
 
 \textbf{Характеризация существенно особой точки:}\\
